@@ -40,6 +40,16 @@
 		847B62602867BAB60043099C /* RecipesInterector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B625F2867BAB50043099C /* RecipesInterector.swift */; };
 		847B62632867BF1D0043099C /* RecipesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B62622867BF1D0043099C /* RecipesRepository.swift */; };
 		847B62652867C6FE0043099C /* UiImageViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B62642867C6FE0043099C /* UiImageViewExtention.swift */; };
+		847B6267286885600043099C /* UICollectionViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B6266286885600043099C /* UICollectionViewExtention.swift */; };
+		847B626B2868879D0043099C /* HealthFiltterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B62692868879D0043099C /* HealthFiltterCollectionCell.swift */; };
+		847B626C2868879D0043099C /* HealthFiltterCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847B626A2868879D0043099C /* HealthFiltterCollectionCell.xib */; };
+		847B626E28688B390043099C /* HealthFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B626D28688B390043099C /* HealthFilterModel.swift */; };
+		847B6273286933450043099C /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B6272286933440043099C /* Stubs.swift */; };
+		847B6276286939270043099C /* RecipesRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B6275286939270043099C /* RecipesRepositoryMock.swift */; };
+		847B627928693A7F0043099C /* APIClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B627828693A7F0043099C /* APIClientSpy.swift */; };
+		847B627B28693ADF0043099C /* RecipesListPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B627A28693ADF0043099C /* RecipesListPresenterSpy.swift */; };
+		847B627D28693D3F0043099C /* RecipesListViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B627C28693D3F0043099C /* RecipesListViewSpy.swift */; };
+		847B6280286940840043099C /* RecipesListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B627F286940840043099C /* RecipesListInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +106,16 @@
 		847B625F2867BAB50043099C /* RecipesInterector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesInterector.swift; sourceTree = "<group>"; };
 		847B62622867BF1D0043099C /* RecipesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRepository.swift; sourceTree = "<group>"; };
 		847B62642867C6FE0043099C /* UiImageViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiImageViewExtention.swift; sourceTree = "<group>"; };
+		847B6266286885600043099C /* UICollectionViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtention.swift; sourceTree = "<group>"; };
+		847B62692868879D0043099C /* HealthFiltterCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthFiltterCollectionCell.swift; sourceTree = "<group>"; };
+		847B626A2868879D0043099C /* HealthFiltterCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthFiltterCollectionCell.xib; sourceTree = "<group>"; };
+		847B626D28688B390043099C /* HealthFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthFilterModel.swift; sourceTree = "<group>"; };
+		847B6272286933440043099C /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
+		847B6275286939270043099C /* RecipesRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRepositoryMock.swift; sourceTree = "<group>"; };
+		847B627828693A7F0043099C /* APIClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientSpy.swift; sourceTree = "<group>"; };
+		847B627A28693ADF0043099C /* RecipesListPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListPresenterSpy.swift; sourceTree = "<group>"; };
+		847B627C28693D3F0043099C /* RecipesListViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListViewSpy.swift; sourceTree = "<group>"; };
+		847B627F286940840043099C /* RecipesListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListInteractorTests.swift; sourceTree = "<group>"; };
 		867DC1AA46616D79DCB3F090 /* Pods-SoftXpert_Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftXpert_Task.release.xcconfig"; path = "Target Support Files/Pods-SoftXpert_Task/Pods-SoftXpert_Task.release.xcconfig"; sourceTree = "<group>"; };
 		AA49FB178DC07186497597A8 /* Pods-SoftXpert_Task-SoftXpert_TaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftXpert_Task-SoftXpert_TaskUITests.release.xcconfig"; path = "Target Support Files/Pods-SoftXpert_Task-SoftXpert_TaskUITests/Pods-SoftXpert_Task-SoftXpert_TaskUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BEF02A3321B79669D1688CD1 /* Pods-SoftXpert_TaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftXpert_TaskTests.debug.xcconfig"; path = "Target Support Files/Pods-SoftXpert_TaskTests/Pods-SoftXpert_TaskTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +211,10 @@
 		847B6208286743B50043099C /* SoftXpert_TaskTests */ = {
 			isa = PBXGroup;
 			children = (
+				847B626F286932F70043099C /* Subs */,
+				847B6274286939100043099C /* Mock */,
+				847B627728693A660043099C /* Spy */,
+				847B627E28693EB00043099C /* RecipeListTest */,
 				847B6209286743B50043099C /* SoftXpert_TaskTests.swift */,
 			);
 			path = SoftXpert_TaskTests;
@@ -260,6 +284,7 @@
 				847B623028674F880043099C /* ReusableUIViewExtension.swift */,
 				847B623228674FAA0043099C /* UITableViewExtension.swift */,
 				847B62642867C6FE0043099C /* UiImageViewExtention.swift */,
+				847B6266286885600043099C /* UICollectionViewExtention.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -279,11 +304,11 @@
 		847B624128676EB50043099C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				847B625C2867B7FD0043099C /* Protocolo */,
-				847B62572867AEE60043099C /* Configurator */,
 				847B6242286775BD0043099C /* View */,
 				847B62542867AAC90043099C /* Request */,
+				847B625C2867B7FD0043099C /* Protocolo */,
 				847B62612867BEF80043099C /* Repository */,
+				847B62572867AEE60043099C /* Configurator */,
 				847B62512867A5D20043099C /* Model */,
 			);
 			path = Scenes;
@@ -292,6 +317,7 @@
 		847B6242286775BD0043099C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				847B62682868875D0043099C /* HealthFiltterCell */,
 				847B624828679ED20043099C /* RecipeCell */,
 				847B6243286775C70043099C /* RecipeSearch */,
 				847B625A2867B7B30043099C /* RecipePresenter.swift */,
@@ -322,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				847B62522867A5E30043099C /* RecipeModel.swift */,
+				847B626D28688B390043099C /* HealthFilterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,6 +383,49 @@
 				847B62622867BF1D0043099C /* RecipesRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		847B62682868875D0043099C /* HealthFiltterCell */ = {
+			isa = PBXGroup;
+			children = (
+				847B62692868879D0043099C /* HealthFiltterCollectionCell.swift */,
+				847B626A2868879D0043099C /* HealthFiltterCollectionCell.xib */,
+			);
+			path = HealthFiltterCell;
+			sourceTree = "<group>";
+		};
+		847B626F286932F70043099C /* Subs */ = {
+			isa = PBXGroup;
+			children = (
+				847B6272286933440043099C /* Stubs.swift */,
+			);
+			path = Subs;
+			sourceTree = "<group>";
+		};
+		847B6274286939100043099C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				847B6275286939270043099C /* RecipesRepositoryMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		847B627728693A660043099C /* Spy */ = {
+			isa = PBXGroup;
+			children = (
+				847B627828693A7F0043099C /* APIClientSpy.swift */,
+				847B627A28693ADF0043099C /* RecipesListPresenterSpy.swift */,
+				847B627C28693D3F0043099C /* RecipesListViewSpy.swift */,
+			);
+			path = Spy;
+			sourceTree = "<group>";
+		};
+		847B627E28693EB00043099C /* RecipeListTest */ = {
+			isa = PBXGroup;
+			children = (
+				847B627F286940840043099C /* RecipesListInteractorTests.swift */,
+			);
+			path = RecipeListTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,6 +541,7 @@
 				847B625028679F540043099C /* RecipeTabelViewCell.xib in Resources */,
 				847B61FF286743B50043099C /* LaunchScreen.storyboard in Resources */,
 				847B6247286778F20043099C /* RecipeSearchVC.xib in Resources */,
+				847B626C2868879D0043099C /* HealthFiltterCollectionCell.xib in Resources */,
 				847B61FC286743B50043099C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,10 +670,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847B626B2868879D0043099C /* HealthFiltterCollectionCell.swift in Sources */,
 				847B622E28674F2C0043099C /* LoadingViewCapable.swift in Sources */,
+				847B6267286885600043099C /* UICollectionViewExtention.swift in Sources */,
 				847B623A286750600043099C /* AlamofireAdaptingExtensions.swift in Sources */,
 				847B62532867A5E30043099C /* RecipeModel.swift in Sources */,
 				847B6240286751130043099C /* Localization.swift in Sources */,
+				847B626E28688B390043099C /* HealthFilterModel.swift in Sources */,
 				847B623E286750A00043099C /* NetworkConstants.swift in Sources */,
 				847B62592867AF070043099C /* RecipeConfigurator.swift in Sources */,
 				847B623C286750810043099C /* CustomNetworkError.swift in Sources */,
@@ -628,7 +702,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847B6280286940840043099C /* RecipesListInteractorTests.swift in Sources */,
+				847B627B28693ADF0043099C /* RecipesListPresenterSpy.swift in Sources */,
+				847B627D28693D3F0043099C /* RecipesListViewSpy.swift in Sources */,
 				847B620A286743B50043099C /* SoftXpert_TaskTests.swift in Sources */,
+				847B6273286933450043099C /* Stubs.swift in Sources */,
+				847B627928693A7F0043099C /* APIClientSpy.swift in Sources */,
+				847B6276286939270043099C /* RecipesRepositoryMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

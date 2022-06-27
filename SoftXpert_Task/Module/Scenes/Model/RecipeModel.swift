@@ -13,12 +13,13 @@ struct Recipe: Model {
     let hits: [Hits]
     
     struct Hits : Model{
-        let recipe : Result
+        let recipe : hits
     }
-    struct Result: Model {
+    struct hits: Model {
         
         let label: String
         let image : String
         let source: String
     }
 }
+

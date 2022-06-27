@@ -16,7 +16,7 @@ struct Localization {
         case errorMessageCanNotSendRequest = "error_message_can_not_send_request"
         case errorMessageCanNotReadData = "error_message_can_not_read_data"
         case encounteredProblem = "encountered_problem"
-        case articaleListEmptyData = "articale_list_empty_data"
+        case recipeleListEmptyData = "recipe_list_empty_data"
     }
     
     static func string(for key: LocalizationKey) -> String {

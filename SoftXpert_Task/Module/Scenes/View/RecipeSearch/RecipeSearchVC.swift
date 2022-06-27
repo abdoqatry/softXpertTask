@@ -13,6 +13,7 @@ class RecipeSearchVC: UIViewController {
     
     var interactor: RecipesListViewToInteractorProtocol?
     
+   
     @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var recipeTabelView: UITableView!{
         didSet {
@@ -21,19 +22,48 @@ class RecipeSearchVC: UIViewController {
             recipeTabelView.registerCell(withCellType: RecipeTabelViewCell.self)
         }
     }
+    @IBOutlet weak var healthCollectionView: UICollectionView!{
+        didSet {
+            healthCollectionView.delegate = self
+            healthCollectionView.dataSource = self
+            healthCollectionView.registerCell(withCellType: HealthFiltterCollectionCell.self)
+        }
+    }
     
     // MARK: - Private Properties
     private var recipesList : [Recipe.Hits] = []
     private var recipes : Recipe?
     private let cellHeight = 140.0
     private var from = 1
+    private var healthValue = "All"
+    private var health = [HealthFiltterModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.fetchAllRecipes(searchText: "Chicken", from: from, health: "vegan")
+       addHealthFiltter()
+        setView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+       
+        let indexPathForFirstRow = IndexPath(row: 0, section: 0)
+        healthCollectionView.selectItem(at: indexPathForFirstRow, animated: false, scrollPosition: .left)
     }
 
-
+    
+    func addHealthFiltter(){
+        health.append(HealthFiltterModel(name: "All"))
+        health.append(HealthFiltterModel(name: "vegan"))
+        health.append(HealthFiltterModel(name: "kosher"))
+        health.append(HealthFiltterModel(name: "vegetarian"))
+        healthCollectionView.reloadData()
+    }
+    
+    func setView(){
+        searchTF.delegate = self
+        searchTF.returnKeyType = UIReturnKeyType.search
+    }
 
 }
 
@@ -62,12 +92,12 @@ extension RecipeSearchVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastItem = (recipes?.hits.count ?? 0) - 1
-        if indexPath.item == lastItem{
-            if recipes?.more == true {
-                interactor?.fetchAllRecipes(searchText: "Chicken", from: from + 10, health: "vegan")
-            }
-        }
+//        let lastItem = (recipes?.hits.count ?? 0) - 1
+//        if indexPath.item == lastItem{
+//            if recipes?.more == true {
+//                interactor?.fetchAllRecipes(searchText: "Chicken", from: from + 10, health: "vegan")
+//            }
+//        }
         
     }
     
@@ -79,5 +109,40 @@ extension RecipeSearchVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight
+    }
+}
+
+
+extension RecipeSearchVC: UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        interactor?.fetchAllRecipes(searchText: searchTF.text ?? "", from: from, health: healthValue, healthKey: healthValue)
+        return true
+    }
+    
+}
+
+
+extension RecipeSearchVC: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        health.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: HealthFiltterCollectionCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
+        cell.configure(viewModel: health[indexPath.row])
+     
+        return cell
+    }
+}
+
+extension RecipeSearchVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.healthValue = health[indexPath.row].name
+        self.recipesList.removeAll()
+        interactor?.fetchAllRecipes(searchText: searchTF
+                                        .text ?? "", from: from, health: healthValue, healthKey: healthValue)
     }
 }

@@ -28,9 +28,10 @@ class RecipesListInteractor {
 
 extension RecipesListInteractor: RecipesListInteractorProtocol {
 
-    func fetchAllRecipes(searchText:String,from:Int,health:String) {
+    func fetchAllRecipes(searchText:String,from:Int,health:String,healthKey:String) {
         self.presenter.showLoading()
-        repository.getRecipesList(searchText: searchText, from: from, health: health, compeletion:  { [weak self] result in
+        let healthValidation  = presenter.validateHealthFiltter(text: health)
+        repository.getRecipesList(searchText: searchText, from: from, health: health, healthKey: healthValidation, compeletion:  { [weak self] result in
            switch result {
         case .success(let recipe):
                self?.presenter.didReceiveRecipes(recipe, recipesList: recipe.hits)

@@ -24,9 +24,17 @@ class RecipesListPresenter {
 
 
 extension RecipesListPresenter : RecipesListPresenterProtocol{
+    func validateHealthFiltter(text:String) -> String {
+        if text == "All" {
+            return ""
+        }else{
+            return "health"
+        }
+    }
+    
     func didReceiveRecipes(_ recipe: Recipe, recipesList: [Recipe.Hits]) {
         if recipe.hits.isEmpty {
-            view?.showErrorView(title: "", subtitle: Localization.string(for: .articaleListEmptyData))
+            view?.showErrorView(title: "", subtitle: Localization.string(for: .recipeleListEmptyData))
         } else {
             view?.showRecipesList(recipe, recipesList)
         }

@@ -17,8 +17,9 @@ struct RecipesRepository {
 
 
 extension RecipesRepository : RecipesRepositoryProtocol {
-    func getRecipesList(searchText: String, from: Int, health: String, compeletion: @escaping (Result<Recipe, CustomNetworkError>) -> Void) {
-        let request = RecipesRequest.list(from: from, searchText: searchText, healthText: health)
+    
+    func getRecipesList(searchText: String, from: Int, health: String,healthKey: String,compeletion: @escaping (Result<Recipe, CustomNetworkError>) -> Void) {
+        let request = RecipesRequest.list(from: from, searchText: searchText, healthText: health, healthKey: healthKey)
         apiClient.send(request: request, compeletion: compeletion)
     }
     

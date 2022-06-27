@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecipeSearchVC" customModule="SoftXpert_Task" customModuleProvider="target">
             <connections>
+                <outlet property="healthCollectionView" destination="yRC-6h-S2N" id="1S4-pH-2aw"/>
                 <outlet property="recipeTabelView" destination="exf-ID-j8G" id="kpw-Yf-ddZ"/>
                 <outlet property="searchTF" destination="1L7-6M-chz" id="NoT-Gr-dD3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -29,9 +30,22 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="exf-ID-j8G">
-                    <rect key="frame" x="5" y="130" width="404" height="722"/>
+                    <rect key="frame" x="5" y="195" width="404" height="657"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yRC-6h-S2N">
+                    <rect key="frame" x="20" y="110" width="374" height="65"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="zzu-v6-NY4"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fC6-Yn-3op">
+                        <size key="itemSize" width="128" height="60"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -39,8 +53,11 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1L7-6M-chz" secondAttribute="trailing" constant="40" id="0JZ-tn-etu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="exf-ID-j8G" secondAttribute="bottom" constant="10" id="7Qs-bC-ID9"/>
                 <constraint firstItem="1L7-6M-chz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="A0h-gQ-bEr"/>
+                <constraint firstItem="yRC-6h-S2N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="CYd-WA-64w"/>
                 <constraint firstItem="exf-ID-j8G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="FSz-pR-Prb"/>
-                <constraint firstItem="exf-ID-j8G" firstAttribute="top" secondItem="1L7-6M-chz" secondAttribute="bottom" constant="30" id="J0T-vu-9Xv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yRC-6h-S2N" secondAttribute="trailing" constant="20" id="UHu-o8-Pst"/>
+                <constraint firstItem="exf-ID-j8G" firstAttribute="top" secondItem="yRC-6h-S2N" secondAttribute="bottom" constant="20" id="ZSp-iH-ig6"/>
+                <constraint firstItem="yRC-6h-S2N" firstAttribute="top" secondItem="1L7-6M-chz" secondAttribute="bottom" constant="10" id="ffV-Np-qfL"/>
                 <constraint firstItem="1L7-6M-chz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="ts6-TE-U2c"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="exf-ID-j8G" secondAttribute="trailing" constant="5" id="yRk-wj-MoO"/>
             </constraints>

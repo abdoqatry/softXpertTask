@@ -15,12 +15,12 @@ protocol RecipesListViewProtocol: RecipesListPresenterToViewProtocol {
 }
 
 protocol RecipesListViewToInteractorProtocol {
-    func fetchAllRecipes(searchText:String,from:Int,health:String)
+    func fetchAllRecipes(searchText:String,from:Int,health:String,healthKey:String)
 }
 
 // MARK: - Interactor Protocols
 protocol RecipesInteractorToRepositoryProtocol {
-    func getRecipesList(searchText:String,from:Int,health:String, compeletion: @escaping (Result<Recipe, CustomNetworkError>) -> Void)
+    func getRecipesList(searchText:String,from:Int,health:String,healthKey:String, compeletion: @escaping (Result<Recipe, CustomNetworkError>) -> Void)
 }
 
 protocol RecipesListInteractorProtocol: RecipesListViewToInteractorProtocol {
@@ -33,6 +33,7 @@ protocol RecipesListInteractorToPresenterProtocol {
     func didReceiveError(_ error: CustomNetworkError)
     func showLoading()
     func hideLoading()
+    func validateHealthFiltter(text:String) -> String
     
 }
 
