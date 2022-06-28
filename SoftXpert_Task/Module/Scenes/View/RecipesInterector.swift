@@ -34,7 +34,7 @@ extension RecipesListInteractor: RecipesListInteractorProtocol {
         repository.getRecipesList(searchText: searchText, from: from, health: health, healthKey: healthValidation, compeletion:  { [weak self] result in
            switch result {
         case .success(let recipe):
-               self?.presenter.didReceiveRecipes(recipe, recipesList: recipe.hits)
+               self?.presenter.didReceiveRecipes(recipe, recipe.hits)
         case .failure(let error):
             self?.presenter.didReceiveError(error)
         }

@@ -31,12 +31,17 @@ class RecipeSearchVC: UIViewController {
     }
     
     // MARK: - Private Properties
-    private var recipesList : [Recipe.Hits] = []
-    private var recipes : Recipe?
-    private let cellHeight = 140.0
-    private var from = 1
-    private var healthValue = "All"
-    private var health = [HealthFiltterModel]()
+     var recipesList : [Recipe.Hits] = [] {
+        didSet{
+        recipeTabelView.reloadData()
+        }
+    }
+     var recipes : Recipe?
+     let cellHeight = 140.0
+     var from = 1
+     var healthValue = "All"
+     var health = [HealthFiltterModel]()
+     var currentSelected:Int? = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +49,6 @@ class RecipeSearchVC: UIViewController {
         setView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-       
-        let indexPathForFirstRow = IndexPath(row: 0, section: 0)
-        healthCollectionView.selectItem(at: indexPathForFirstRow, animated: false, scrollPosition: .left)
-    }
-
     
     func addHealthFiltter(){
         health.append(HealthFiltterModel(name: "All"))
@@ -63,6 +61,7 @@ class RecipeSearchVC: UIViewController {
     func setView(){
         searchTF.delegate = self
         searchTF.returnKeyType = UIReturnKeyType.search
+        
     }
 
 }
@@ -73,7 +72,7 @@ extension RecipeSearchVC: RecipesListViewProtocol {
     func showRecipesList(_ recipes: Recipe,_ recipeList: [Recipe.Hits]) {
         self.recipes = recipes
         self.recipesList.append(contentsOf: recipeList)
-        recipeTabelView.reloadData()
+       
     }
     
 }
@@ -92,14 +91,16 @@ extension RecipeSearchVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        let lastItem = (recipes?.hits.count ?? 0) - 1
-//        if indexPath.item == lastItem{
-//            if recipes?.more == true {
-//                interactor?.fetchAllRecipes(searchText: "Chicken", from: from + 10, health: "vegan")
-//            }
-//        }
+        let lastItem = (recipes?.hits.count ?? 0) - 1
+        if indexPath.item == lastItem{
+            if recipes?.more == true {
+                interactor?.fetchAllRecipes(searchText: searchTF.text ?? "", from: from + 10, health: healthValue, healthKey: healthValue)
+            }
+        }
         
     }
+    
+    
     
     
 }
@@ -116,7 +117,9 @@ extension RecipeSearchVC: UITableViewDelegate {
 extension RecipeSearchVC: UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.recipesList.removeAll()
         interactor?.fetchAllRecipes(searchText: searchTF.text ?? "", from: from, health: healthValue, healthKey: healthValue)
+        view.endEditing(true)
         return true
     }
     
@@ -131,18 +134,38 @@ extension RecipeSearchVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HealthFiltterCollectionCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
+//        cell.selectionStyle = .gray
+        if currentSelected == indexPath.row{
+            cell.titleLabel.backgroundColor = .red
+        }else{
+            cell.titleLabel.backgroundColor = .clear
+        }
         cell.configure(viewModel: health[indexPath.row])
-     
+        
+        
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        //add here
+        let selectedIndexPath = IndexPath(item: 0, section: 0)
+        collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: [])
+    }
+    
+    
 }
 
 extension RecipeSearchVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.healthValue = health[indexPath.row].name
+        currentSelected = indexPath.row
+        healthCollectionView.reloadData()
         self.recipesList.removeAll()
         interactor?.fetchAllRecipes(searchText: searchTF
                                         .text ?? "", from: from, health: healthValue, healthKey: healthValue)
     }
+    
+    
+    
 }

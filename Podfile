@@ -7,6 +7,7 @@ target 'SoftXpert_Task' do
 
   # Pods for SoftXpert_Task
   pod 'Alamofire', '~> 5.2'
+   pod 'Kingfisher'
 
   target 'SoftXpert_TaskTests' do
     inherit! :search_paths

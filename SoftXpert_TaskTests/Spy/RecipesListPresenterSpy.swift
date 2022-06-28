@@ -21,7 +21,7 @@ class RecipesListPresenterSpy: RecipesListPresenterProtocol {
     
     var view: RecipesListPresenterToViewProtocol?
     
-    func didReceiveRecipes(_ recipe: Recipe, recipesList: [Recipe.Hits]) {
+    func didReceiveRecipes(_ recipe: Recipe, _ recipesList: [Recipe.Hits]) {
         self.recipesList = recipesList
         self.recipe = recipe
     }

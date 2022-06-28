@@ -19,6 +19,10 @@ class RecipesStubs {
         ]
     }
     
+    static func createRecip()-> Recipe{
+    return Recipe(from: 0, more: false, hits: createRecipsArray())
+    }
+    
     static func createArticaleSuccessData() -> Recipe {
         return Recipe(from: 0, more: false, hits: createRecipsArray())
     }

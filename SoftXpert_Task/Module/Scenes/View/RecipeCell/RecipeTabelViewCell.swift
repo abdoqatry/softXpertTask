@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RecipeTabelViewCell: UITableViewCell,Reuseable {
 
@@ -29,7 +30,9 @@ class RecipeTabelViewCell: UITableViewCell,Reuseable {
     func configure(viewModel: Recipe.Hits){
         recipeTittleLabel.text = viewModel.recipe.label
         RecipeSourceLabel.text = viewModel.recipe.source
-        recipeImage.downloaded(from: viewModel.recipe.image)
+        if let url = URL(string: viewModel.recipe.image){
+            recipeImage.kf.setImage(with:url)
+        }
     }
     
 }

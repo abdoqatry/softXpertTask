@@ -29,7 +29,7 @@ protocol RecipesListInteractorProtocol: RecipesListViewToInteractorProtocol {
 }
 
 protocol RecipesListInteractorToPresenterProtocol {
-    func didReceiveRecipes(_ recipe: Recipe,recipesList: [Recipe.Hits] )
+    func didReceiveRecipes(_ recipe: Recipe,_ recipesList: [Recipe.Hits] )
     func didReceiveError(_ error: CustomNetworkError)
     func showLoading()
     func hideLoading()

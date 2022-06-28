@@ -25,23 +25,23 @@ class RecipesListPresenter {
 
 extension RecipesListPresenter : RecipesListPresenterProtocol{
     func validateHealthFiltter(text:String) -> String {
-        if text == "All" {
+        if text == "All" || text == "" {
             return ""
-        }else{
-            return "health"
         }
+            return "health"
     }
     
-    func didReceiveRecipes(_ recipe: Recipe, recipesList: [Recipe.Hits]) {
+    func didReceiveRecipes(_ recipe: Recipe, _ recipesList: [Recipe.Hits]) {
         if recipe.hits.isEmpty {
-            view?.showErrorView(title: "", subtitle: Localization.string(for: .recipeleListEmptyData))
+            view?.showErrorView( subtitle: Localization.string(for: .recipeleListEmptyData),selfDismissing: true)
+            
         } else {
             view?.showRecipesList(recipe, recipesList)
         }
     }
     
     func didReceiveError(_ error: CustomNetworkError) {
-        view?.showErrorView(title: Localization.string(for: .encounteredProblem), subtitle: error.localizedDescription)
+        view?.showErrorView( subtitle: error.localizedDescription,selfDismissing: true)
     }
     
     func showLoading() {

@@ -18,7 +18,7 @@ class RecipesListViewSpy: RecipesListViewProtocol {
     
     var recipesList: [Recipe.Hits]?
     var recipes: Recipe?
-    var error: (title: String, subtitle: String)?
+    var error: (title: String, selfDismiss: Bool)?
     var isShowingErrorView = false
     var isShowingLoading = false
     
@@ -38,8 +38,14 @@ class RecipesListViewSpy: RecipesListViewProtocol {
     var retryViewEdgeInsets: UIEdgeInsets?
     
     func showErrorView(title: String, subtitle: String) {
+        
+    }
+    
+    func showErrorView(subtitle: String, selfDismissing: Bool) {
+        error = (title: subtitle, selfDismiss: selfDismissing)
         isShowingErrorView = true
     }
+    
     
     func hideErrorView() {
         isShowingErrorView = false
