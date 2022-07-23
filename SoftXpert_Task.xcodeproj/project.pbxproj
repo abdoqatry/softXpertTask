@@ -10,6 +10,11 @@
 		036EA562E3A89D210DFB1C2E /* Pods_SoftXpert_Task_SoftXpert_TaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA43271D3C8D467CA93EF386 /* Pods_SoftXpert_Task_SoftXpert_TaskUITests.framework */; };
 		18508E2503BA9328CD7E1ECC /* Pods_SoftXpert_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F2ABD330B3513D779E87755 /* Pods_SoftXpert_Task.framework */; };
 		27E38A8B98D3009DAFE4AFF9 /* Pods_SoftXpert_TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32CB87A8A855FEADA30080E /* Pods_SoftXpert_TaskTests.framework */; };
+		847AC5C828898F5100EEE49E /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 847AC5C728898F5100EEE49E /* Charts */; };
+		847AC5CA28898F5100EEE49E /* ChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 847AC5C928898F5100EEE49E /* ChartsDynamic */; };
+		847AC5CD2889986100EEE49E /* ChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AC5CB2889986100EEE49E /* ChartVC.swift */; };
+		847AC5CE2889986100EEE49E /* ChartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AC5CC2889986100EEE49E /* ChartVC.xib */; };
+		847AC5D1288999BB00EEE49E /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 847AC5D0288999BB00EEE49E /* Algorithms */; };
 		847B61F3286743B20043099C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B61F2286743B20043099C /* AppDelegate.swift */; };
 		847B61FC286743B50043099C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847B61FB286743B50043099C /* Assets.xcassets */; };
 		847B61FF286743B50043099C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B61FD286743B50043099C /* LaunchScreen.storyboard */; };
@@ -76,6 +81,8 @@
 /* Begin PBXFileReference section */
 		0F2ABD330B3513D779E87755 /* Pods_SoftXpert_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoftXpert_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEB4972F54F1082A71F5C28 /* Pods-SoftXpert_Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftXpert_Task.debug.xcconfig"; path = "Target Support Files/Pods-SoftXpert_Task/Pods-SoftXpert_Task.debug.xcconfig"; sourceTree = "<group>"; };
+		847AC5CB2889986100EEE49E /* ChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVC.swift; sourceTree = "<group>"; };
+		847AC5CC2889986100EEE49E /* ChartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartVC.xib; sourceTree = "<group>"; };
 		847B61EF286743B20043099C /* SoftXpert_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoftXpert_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B61F2286743B20043099C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847B61FB286743B50043099C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,7 +145,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847AC5D1288999BB00EEE49E /* Algorithms in Frameworks */,
+				847AC5CA28898F5100EEE49E /* ChartsDynamic in Frameworks */,
 				18508E2503BA9328CD7E1ECC /* Pods_SoftXpert_Task.framework in Frameworks */,
+				847AC5C828898F5100EEE49E /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +192,15 @@
 				EBEF25C607673F460EDF1EBC /* Pods-SoftXpert_TaskTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		847AC5C328898C1200EEE49E /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				847AC5CB2889986100EEE49E /* ChartVC.swift */,
+				847AC5CC2889986100EEE49E /* ChartVC.xib */,
+			);
+			path = Chart;
 			sourceTree = "<group>";
 		};
 		847B61E6286743B20043099C = {
@@ -251,6 +270,7 @@
 		847B622328674B140043099C /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				847AC5C328898C1200EEE49E /* Chart */,
 				847B622428674B290043099C /* Common Reusable View */,
 				847B622F28674F590043099C /* Extension */,
 				847B623428674FFB0043099C /* Network Client */,
@@ -466,6 +486,11 @@
 			dependencies = (
 			);
 			name = SoftXpert_Task;
+			packageProductDependencies = (
+				847AC5C728898F5100EEE49E /* Charts */,
+				847AC5C928898F5100EEE49E /* ChartsDynamic */,
+				847AC5D0288999BB00EEE49E /* Algorithms */,
+			);
 			productName = SoftXpert_Task;
 			productReference = 847B61EF286743B20043099C /* SoftXpert_Task.app */;
 			productType = "com.apple.product-type.application";
@@ -541,6 +566,10 @@
 				Base,
 			);
 			mainGroup = 847B61E6286743B20043099C;
+			packageReferences = (
+				847AC5C628898F5100EEE49E /* XCRemoteSwiftPackageReference "Charts" */,
+				847AC5CF288999BB00EEE49E /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			productRefGroup = 847B61F0286743B20043099C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -558,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847B625028679F540043099C /* RecipeTabelViewCell.xib in Resources */,
+				847AC5CE2889986100EEE49E /* ChartVC.xib in Resources */,
 				847B6293286A65E60043099C /* RecipeDetailsVC.xib in Resources */,
 				847B61FF286743B50043099C /* LaunchScreen.storyboard in Resources */,
 				847B6247286778F20043099C /* RecipeSearchVC.xib in Resources */,
@@ -709,6 +739,7 @@
 				847B62602867BAB60043099C /* RecipesInterector.swift in Sources */,
 				847B625E2867B8360043099C /* RecipeListProtocol.swift in Sources */,
 				847B623128674F880043099C /* ReusableUIViewExtension.swift in Sources */,
+				847AC5CD2889986100EEE49E /* ChartVC.swift in Sources */,
 				847B623328674FAA0043099C /* UITableViewExtension.swift in Sources */,
 				847B6246286778F20043099C /* RecipeSearchVC.swift in Sources */,
 				847B6292286A65E60043099C /* RecipeDetailsVC.swift in Sources */,
@@ -1080,6 +1111,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		847AC5C628898F5100EEE49E /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		847AC5CF288999BB00EEE49E /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		847AC5C728898F5100EEE49E /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 847AC5C628898F5100EEE49E /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+		847AC5C928898F5100EEE49E /* ChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 847AC5C628898F5100EEE49E /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = ChartsDynamic;
+		};
+		847AC5D0288999BB00EEE49E /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 847AC5CF288999BB00EEE49E /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 847B61E7286743B20043099C /* Project object */;
 }

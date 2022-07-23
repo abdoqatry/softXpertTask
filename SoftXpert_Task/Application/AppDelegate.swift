@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func startFlow() {
-        let vc = RecipeeConfigurator.asymble(type: .listView)
+//        let vc = RecipeeConfigurator.asymble(type: .listView)
+        let vc = Bundle.main.loadNibNamed("ChartVC", owner: nil, options: nil)![0] as! ChartVC
         window?.rootViewController = UINavigationController(rootViewController: vc)
         window?.makeKeyAndVisible()
     }
